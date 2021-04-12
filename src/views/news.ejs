@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Computer Hardware App</title>
+        <link rel="stylesheet" type = "text/css" href="/css/media.css">
+    </head>
+    <body>
+        <main id= "top-title"> 
+            <div id= "main-title"> 
+            <h1>Computer Hardware App</h1>
+        </div>
+
+        <div id="menu">
+            <ul class="menu-item">
+               <a href="#" style="float: left" title="news" >News</a>
+                <a href="#" style="float: left" title="hardware" >Hardware</a>
+                <a href="#" style="float: left" title="momnet" >Moment</a>
+                <a href="#" style="float: left" title="about" >About</a>
+             </ul>
+        </div>
+        <div id="input-box">
+            <input type= "text" placeholder="Please enter to search">
+        </div> 
+    </main>
+    <main id= "media"> 
+        <div class= "container">
+                <hr> 
+                <div class="wrapper">
+                    <div class="news">
+                        <% if(articles != null) { %>
+                        <% articles.forEach(function(article, index) { %>
+                            <a href="<%- article.url %>" class="news__card">
+                                <img src="<%- article.urlToImage %>" alt="<%- article.title %>">
+                                <h2><%- article.title %></h2>
+                                <p><%- article.description %></p>
+                            </a>
+                        <% }) %>
+                        <% } else { %>
+                            No posts found.
+                        <% } %>
+                    </div>
+                </div>
+    </div>
+
+        </main>
+
+
+    </body>
+</html>

@@ -11,7 +11,7 @@ newsRouter.get('', async(req, res) => {
 
     // try to make a method wrap everything into a try and catch.
     try {  
-        const newsAPI = await axios.get(`https://newsapi.org/v2/everything?q=tesla&from=2021-03-12&sortBy=publishedAt&apiKey=601ca0864b8f4675978510148c431eae`)
+        const newsAPI = await axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=601ca0864b8f4675978510148c431eae`)
         
         //console.log(newsAPI.data)
         res.render('news', { articles : newsAPI.data.articles })

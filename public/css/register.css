@@ -1,0 +1,103 @@
+body {
+    background-color: #07ac84;
+    font-family: "SF Pro Display", 'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+}
+input{
+    display: inline-block;
+    background: #fff;
+}
+.container{
+    width: 100%;
+}
+.register-box{
+    position: relative;
+    height: 500px;
+    width: 600px;
+    margin: 110px auto;
+    background:#ffffff;
+    border-radius: 10px;
+    border: 8px solid #bfbfbf;
+
+}
+.title-box{
+    padding-top: 1px;
+    text-align: center;
+    font-size: 17px;
+    color: black; 
+}
+.username-box{
+    position: absolute;
+    margin-top:10px;
+    margin-left: 20px;
+    font-weight: 700;
+}
+.username-input{
+    display: inline-block;
+    margin-left: 70px;
+}
+#username{
+    height: 35px;
+    width: 290px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.userPassword-box{
+    position: absolute;
+    margin-top:75px;
+    margin-left: 20px;
+    font-weight: 700;
+}
+.userPassword-input{
+    display: inline-block;
+    margin-left: 100px;
+}
+#userPassword{
+    height: 35px;
+    width: 290px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.userRePassword-box{
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+.userRePassword-input{
+    display: inline-block;
+    margin-left: 10px;
+}
+#userRePassword{
+    height: 35px;
+    width: 290px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.require{
+    color: red;
+}
+.submit-box{
+    position:absolute;
+    margin-top: 230px;
+    margin-left:45px;
+    border-radius: 5px;
+    background: grey;
+}
+#submit-button{
+    display: inline-block;
+    width: 500px;
+    height: 40px;
+    border-radius: 8px;
+    background: #7df0ff;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ececec; 
+}
+.goLogin-box{
+    position:absolute;
+    margin-top: 310px;
+    margin-left:45px;
+    font-size: 20px;
+    font-weight: 600;
+}
+

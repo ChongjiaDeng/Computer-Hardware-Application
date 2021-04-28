@@ -2,6 +2,16 @@ body {
     background-color: #07ac84;
 }
 
+#sign-up{
+    width: 300px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
 #top-title{
     width: 600px;
     height: 230px;

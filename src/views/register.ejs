@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type = "text/css"  href="/css/register.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="register-box">
+			<div class="title-box">
+				<h1>Registration</h1>
+				<hr> 
+			</div>
+			<form action="#" method="post">
+				<div class="username-box">
+
+					<label for="username">Account Name</label>
+					<div class="username-input">
+						<input type="text" id="username" name="username" autocomplete="off" placeholder="please enter the User name length:6-12 digits" />
+					</div>
+				</div>
+
+				<div class="userPassword-box">
+					<label for="userPassword">Password</label>
+					<div class="userPassword-input">
+						<input type="password" id="userPassword" name="userPassword" autocomplete="off" placeholder="Please enter the password length:6-12 digits" />
+					</div>
+				</div>
+ 
+				<div class="userRePassword-box">
+				<span class="require">*</span>
+						<label for="userRePassword">Comfrim the Password</label>
+					<div class="userRePassword-input">
+						<input type="password" id="userRePassword" name="userRePassword" autocomplete="off" placeholder="please enter the password again" />
+					</div>
+				</div>
+				
+				<div class="submit-box">
+					<input id = "submit-button" type="submit" value="Register">
+				</div>
+				
+				<div class="goLogin-box">
+					<a href="/users/login" style="text-decoration: none;">If you have the account alradly, sign in</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

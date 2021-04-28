@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<link rel = "stylesheet" href="/css/bootstrap.css">
 	<link rel="stylesheet" type = "text/css"  href="/css/register.css">
-
+	
 </head>
 <body>
 	<div class="container">
@@ -11,20 +13,37 @@
 			<div class="title-box">
 				<h1>Registration</h1>
 				<hr> 
+				<%- include('./partials/messages'); %>
 			</div>
-			<form action="#" method="post">
+			
+			<form action="/users/register" method="post">
+				<div class="user-information">
 				<div class="username-box">
 
 					<label for="username">Account Name</label>
 					<div class="username-input">
-						<input type="text" id="username" name="username" autocomplete="off" placeholder="please enter the User name length:6-12 digits" />
+						<input type="text" 
+						id="username" 
+						name="username" 
+						class= "form-control"
+						
+						placeholder="please enter the User name length:6-12 digits" 
+						value="<%=typeof username != 'undefined' ? username : '' %>"
+						/>
 					</div>
 				</div>
 
 				<div class="userPassword-box">
 					<label for="userPassword">Password</label>
 					<div class="userPassword-input">
-						<input type="password" id="userPassword" name="userPassword" autocomplete="off" placeholder="Please enter the password length:6-12 digits" />
+						<input type="password" 
+						id="userPassword" 
+						name="userPassword" 
+						
+						placeholder="Please enter the password length:6-12 digits"
+						class= "form-control"
+						value="<%=typeof userPassword != 'undefined' ? userPassword : '' %>"
+						 />
 					</div>
 				</div>
  
@@ -32,20 +51,28 @@
 				<span class="require">*</span>
 						<label for="userRePassword">Comfrim the Password</label>
 					<div class="userRePassword-input">
-						<input type="password" id="userRePassword" name="userRePassword" autocomplete="off" placeholder="please enter the password again" />
+						<input type="password" 
+						id="userRePassword" 
+						name="userRePassword" 
+						
+						placeholder="please enter the password again" 
+						value="<%=typeof userRePassword != 'undefined' ? userRePassword : '' %>"
+						/>
 					</div>
 				</div>
 				
 				<div class="submit-box">
-					<input id = "submit-button" type="submit" value="Register">
+					<button type="submit" class="btn btn-primary btn-block">Register</button>
 				</div>
 				
 				<div class="goLogin-box">
 					<a href="/users/login" style="text-decoration: none;">If you have the account alradly, sign in</a>
 				</div>
+			</div>
 			</form>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 
 </html>

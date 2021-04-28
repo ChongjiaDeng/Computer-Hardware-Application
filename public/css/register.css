@@ -10,14 +10,13 @@ input{
     width: 100%;
 }
 .register-box{
-    position: relative;
-    height: 500px;
-    width: 600px;
-    margin: 110px auto;
+    width: 50%;
+    height: 700px;
+    margin: 30px auto;
     background:#ffffff;
     border-radius: 10px;
     border: 8px solid #bfbfbf;
-
+    
 }
 .title-box{
     padding-top: 1px;
@@ -30,6 +29,7 @@ input{
     margin-top:10px;
     margin-left: 20px;
     font-weight: 700;
+    
 }
 .username-input{
     display: inline-block;
@@ -84,9 +84,6 @@ input{
     background: grey;
 }
 #submit-button{
-    display: inline-block;
-    width: 500px;
-    height: 40px;
     border-radius: 8px;
     background: #7df0ff;
     font-size: 20px;

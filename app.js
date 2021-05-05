@@ -20,6 +20,7 @@ require('./config/passport')(passport); //passport config
 //DB config
  const db = require('./config/keys').mongoURI;
 
+
 //connect to Mongoosedb
  mongoose
    .connect(db,{ useNewUrlParser: true ,useUnifiedTopology: true})
@@ -64,6 +65,13 @@ res.locals.error = req.flash('error');
 next();
 });
 
+//global variables
+ app.use(function(req, res, next) {
+res.locals.success_msg = req.flash('success_msg');
+res.locals.error_msg = req.flash('error_msg');
+res.locals.error = req.flash('error');
+next();
+});
 //routes
 const newsRouter = require('./src/routes/news') //The local routes define a route for the one specific IP address configured on the router interface.
 const usersRouter = require('./src/routes/users')
@@ -75,5 +83,5 @@ app.use('/article', newsRouter)
 app.use('/users', usersRouter)
 app.use('/search', searchRouter)
 // to the port 8080
-app.listen(port, () => console.log(`Starting server at ${port}`) )
+app.listen(port, () => console.log(`Starting server at ${port}`) );
 

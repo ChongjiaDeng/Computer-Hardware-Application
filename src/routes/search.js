@@ -36,12 +36,7 @@ searchRouter.get( '/:text', async ( req, res ) => {
 	let saveData = await reptile( stext )
 	// find data from db
 	Goods.find({type: stext}, function(error, data) {
-		if ( data.length !== 0 ) {
-			res.render( 'searchResult', {
-				data: data,
-				title: stext
-			})
-		} else {
+		if ( data.length === 0 ) {
 			// reptile data and save to db
 			saveData.map( item => {
 				let g = new Goods( item )
@@ -51,7 +46,25 @@ searchRouter.get( '/:text', async ( req, res ) => {
 					}
 				})
 			})
+		} else {
+			Goods.deleteMany({type: stext}, function() {
+				saveData.map( item => {
+					let g = new Goods( item )
+					g.save(function( err ) {
+						if ( err ) {
+							console.log(err)
+						}
+					})
+				})
+			})
+			
 		}
+	})
+	Goods.find({type: stext}, function(error, data) {
+		res.render( 'searchResult', {
+			data: data,
+			title: stext
+		})
 	})
 } )
 

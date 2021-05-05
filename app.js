@@ -1,6 +1,7 @@
 //const {static} = require('express')
 const express = require('express')
 //const { use } = require('./src/routes/news')
+const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport'); 
@@ -44,6 +45,7 @@ app.set('view engine' , 'ejs')
 
 //Bodayparser
 app.use(express.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // express-session
 app.use(session({

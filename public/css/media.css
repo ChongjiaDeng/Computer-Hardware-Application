@@ -1,5 +1,5 @@
 body {
-    background-color: #07ac84;
+    background-color: #718041;
     box-sizing: initial
 
 }
@@ -16,9 +16,10 @@ body {
     margin-left: 15px;
 }
 #top-title{
-    width: 600px;
+    width: 900px;
     height: 230px;
     text-align: center;
+    
     background-color: #ffffff;
     border-radius: 10px;
     margin: 20px auto;
@@ -29,15 +30,16 @@ body {
     color: black; 
 }
 
-#input-box [ type = text] {
-    margin-top: 20px;
-    width: 100%;
+.search [ type = text] {
+    width: 90%;
+    margin-top: 70px ;
     border: 2px solid black;
-    padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
-    
 }
+
+
+
 .container{
     box-sizing: initial;
     margin-top: 20px;
@@ -56,7 +58,7 @@ img{
 }
 #media{
     margin: 30px auto;
-    width: 50%;
+    width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 15px;
@@ -64,5 +66,6 @@ img{
 
 .menu-item a{
     background-color: #545578;
-    padding:10px 35px;
+    padding:10px 70px;
+    border-radius: 5px;
 }

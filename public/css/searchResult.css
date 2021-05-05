@@ -1,0 +1,119 @@
+
+#sign-up{
+    width: 300px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2px;
+}
+#top-title{
+    width: 600px;
+    height: 150px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+	padding: 20px;
+    margin: 20px auto;
+} 
+.menu-item a{
+    
+    background-color: #545578;
+    padding:10px 35px;
+}
+
+body {
+	background-color: #07ac84;
+	font-family: "SF Pro Display", 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	box-sizing: border-box;
+}
+
+.search-container {
+	margin: 100px auto;
+	width: 900px;
+	height: 800px;
+	background-color: #fff;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+}
+
+.search {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search>input {
+	width: 90%;
+}
+
+.search>button {
+	width: 10%;
+}
+
+.goods {
+	width: 100%;
+	height: calc(90vh - 120px);
+	overflow-y: scroll;
+}
+
+.goods > .no-result {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+}
+
+.goods>.item {
+	width: 100%;
+	margin-top: 15px;
+	box-sizing: border-box;
+	padding: 0 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 2px solid #ccc;
+}
+
+.goods>.item>img {
+	flex: 1;
+	height: 120px;
+}
+
+.goods>.item>.name {
+	flex: 5;
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+	user-select: none;
+	box-sizing: border-box;
+	padding: 0 5px;
+	
+}
+.goods>.item>.price {
+	flex: 1;
+	font-size: 18px;
+	font-weight: bold;
+	color: red;
+	user-select: none;
+}
+
+.goods>.item>a {
+	display: block;
+	flex: 1;
+	height: 50px;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	background-color: #007BFF;
+	box-sizing: border-box;
+	padding: 0 5px;
+}
+
+.goods>.item>a:hover {
+	text-decoration: none;
+}

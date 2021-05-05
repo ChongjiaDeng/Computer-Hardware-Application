@@ -13,17 +13,16 @@
 			<div class="title-box">
 				<h1>Sign In Account</h1>
 				<hr> 
+				<%- include('./partials/messages'); %>
 			</div>
-			<form action="#" method="post">
+			<form action="/users/login" method="post">
 				<div class="username-box">
-
 					<label for="username">Account Name</label>
 					<div class="username-input">
-						<input type="text" 
+						<input type="name" 
 						id="username" 
 						name="username" 
 						class= "form-control"
-						
 						placeholder="please enter the User name" 
 						value="<%=typeof username != 'undefined' ? username : '' %>"
 						/>
@@ -37,7 +36,6 @@
 						<input type="password" 
 						id="userPassword" 
 						name="userPassword" 
-						
 						placeholder="Please enter the password"
 						class= "form-control"
 						value="<%=typeof userPassword != 'undefined' ? userPassword : '' %>"

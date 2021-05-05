@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>search</title>
+	<link rel = "stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/search.css">
+</head>
+<body>
+	<div id="sign-up">
+        <a href="/users/register" style="float: left; margin-left: 10px;"  title="sign">Sign Up</a>
+        <a href="/users/login" style="float: left; margin-left: 60px;" title="login">Login in</a>
+      </div>
+	  
+	<main id= "top-title"> 
+		<div id= "main-title"> 
+		<h1>Computer Hardware App</h1>
+	</div>
+
+	<div id="menu">
+		<ul class="menu-item">
+		   <a href="/article" style="float: left" title="News" >News</a>
+			<a href="/search" style="float: left" title="Hardware" >Hardware</a>
+			<a href="#" style="float: left" title="momnet" >Moment</a>
+			<a href="#" style="float: left" title="about" >About</a>
+		 </ul>
+	</div>
+	</main>
+	<div class="search-container">
+		<div class="header">
+			Product Search
+		</div>
+		<div class="search">
+			<input type="text" id="search" class="form-control" placeholder="Search">
+			<button class="btn btn-primary">search</button>
+		</div>
+		<div class="goods">
+			<h1>Please enter search content</h1>
+		</div>
+	</div>
+	<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+	<script>
+		const input = document.querySelector('#search')
+		document.querySelector('.btn').onclick = function() {
+			console.log('123')
+			if(input.value !== null && input.value !== '') {
+				window.location.href = '/search/' + input.value
+			} else {
+				alert('Please enter search content')
+			}
+		}
+	</script>
+</body>
+</html>

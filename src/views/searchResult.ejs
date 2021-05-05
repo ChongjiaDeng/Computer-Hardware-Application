@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title><%= title %></title>
+	<link rel = "stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/searchResult.css">
+</head>
+<body>
+
+	<div id="sign-up">
+        <a href="/users/register" style="float: left; margin-left: 10px;"  title="sign">Sign Up</a>
+        <a href="/users/login" style="float: left; margin-left: 60px;" title="login">Login in</a>
+      </div>
+	  
+	<main id= "top-title"> 
+		<div id= "main-title"> 
+		<h1>Computer Hardware App</h1>
+	</div>
+
+	<div id="menu">
+		<ul class="menu-item">
+		   <a href="/article" style="float: left" title="News" >News</a>
+			<a href="/search" style="float: left" title="Hardware" >Hardware</a>
+			<a href="#" style="float: left" title="momnet" >Moment</a>
+			<a href="#" style="float: left" title="about" >About</a>
+		 </ul>
+	</div>
+
+	<div class="search-container">
+		<div class="search">
+			<input type="text" id="search" class="form-control" placeholder="Search" value="<%= title %>">
+			<button class="btn btn-primary">search</button>
+		</div>
+		<div class="goods">
+			<% if(data.length !== 0) { %>
+				<% for(let i = 0; i < data.length; i++) { %>
+					<div class="item">
+						<img src="<%= data[i].imgurl %>">
+						<p class="name"><%= data[i].name %></p>
+						<p class="price"><%= data[i].price %></p>
+						<a href="<%= data[i].buylink %>" target="_blank">Buy</a>
+					</div>
+				<% } %>
+			<% } else { %>
+				<div class="no-result">No results matched your query.</div>
+			<% } %>
+		</div>
+	</div>
+	<script>
+		const input = document.querySelector('#search')
+		document.querySelector('.btn').onclick = function() {
+			console.log('123')
+			if(input.value !== null && input.value !== '') {
+				window.location.href = '/search/' + input.value
+			} else {
+				alert('Please enter search content')
+			}
+		}
+	</script>
+</body>
+</html>

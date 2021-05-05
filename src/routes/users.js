@@ -1,18 +1,20 @@
-const express = require('express')
+const express = require('express');
+const usersRouter = express.Router();
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
-const usersRouter = express.Router()
+const User = require('../models/User');
 
 
 // Login Handler
-usersRouter.get('/login' , (req, res) => res.render('Login'))
+usersRouter.get('/login' , (req, res) => res.render('login'))
 // Register Handler
 usersRouter.get('/register' , (req, res) => res.render('register'))
 
 // Regiser Handler
 usersRouter.post('/register', (req, res) =>{
      const { username, userPassword, userRePassword} = req.body
-     let errors = []
-
+     let errors = [];
 // check required 
 if(!username || !userPassword || !userRePassword) {
     errors.push({ msg: 'please fill out all the fields'})
@@ -34,8 +36,42 @@ if(errors.length > 0){
     res.render('register', 
     {errors, username, userPassword, userRePassword})
 }else{
-    res.send('pass')
-}
+    // Validation passed
+    User.findOne({ username: username}).then(user => {
+        if(user){
+        //user exists
+        errors.push({ msg: 'This Username is already registered'})
+        res.render('register', { errors, username, userPassword, userRePassword})
+    }
+    else{ 
+        const newUser = new User({ username, userPassword})
+ 
+    //password hashing
+    bcrypt.genSalt(10, (err, salt) =>{
+        bcrypt.hash(newUser.userPassword, salt, (err, hash) => {
+            if(err) throw err
+            // let our password to be hash
+            newUser.userPassword = hash
+            //save user
+            newUser.save().then(user =>{
+                req.flash('success_msg', 'You have registered the account, please log in')
+                res.redirect('/users/login')
+            })
+            .catch(err => console.log(err))
+         })
+        })
+        }
+    })  
+    }
 })
 
-module.exports  = usersRouter
+//custom callback. If the built-in options are not sufficient for handling an authentication request
+usersRouter.post('/login', (req, res, next) =>{
+    passport.authenticate('local',  {
+        successRedirect: '/article',
+        failureRedirect: '/users/login',
+        failureFlash: true})
+        (req, res, next);
+});
+
+module.exports  = usersRouter;

@@ -1,5 +1,7 @@
 body {
     background-color: #07ac84;
+    box-sizing: initial
+
 }
 
 #sign-up{
@@ -7,19 +9,20 @@ body {
     padding: 15px 30px;
     background-color: #ffffff;
     border-radius: 10px;
-    margin-left: 30px;
+    margin-top: 20px;
     font-size: 15px;
     font-weight: 600;
+    line-height: 2px;
+    margin-left: 15px;
 }
-
 #top-title{
     width: 600px;
     height: 230px;
     text-align: center;
     background-color: #ffffff;
-    padding: 30px 50px;
     border-radius: 10px;
-    margin: 30px auto;
+    margin: 20px auto;
+    padding: 20px;
 } 
 
 #main-title{
@@ -27,19 +30,25 @@ body {
 }
 
 #input-box [ type = text] {
+    margin-top: 20px;
     width: 100%;
     border: 2px solid black;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    
 }
 .container{
+    box-sizing: initial;
     margin-top: 20px;
+    width: 100%;
+    
 }
 
 .news{
     background-color: #ffffff;
     padding: 30px;
+    
     border-radius: 5px;
 }
 img{
@@ -54,6 +63,6 @@ img{
 }
 
 .menu-item a{
-    background-color:darkseagreen;
+    background-color: #545578;
     padding:10px 35px;
 }

@@ -10,6 +10,10 @@ const User = require('../models/User');
 usersRouter.get('/login' , (req, res) => res.render('login'))
 // Register Handler
 usersRouter.get('/register' , (req, res) => res.render('register'))
+// 
+/*usersRouter.get('/', (req, res) => res.render('', {
+    username: req.user.username
+}))*/
 
 // Regiser Handler
 usersRouter.post('/register', (req, res) =>{
@@ -67,11 +71,22 @@ if(errors.length > 0){
 
 //custom callback. If the built-in options are not sufficient for handling an authentication request
 usersRouter.post('/login', (req, res, next) =>{
-    passport.authenticate('local',  {
+    passport.authenticate('local', {
+ /*       if(name =! null){
+            window.location.href = '/article/' + user.username;
+            successRedirect: window.location.href
+        }*/
         successRedirect: '/article',
         failureRedirect: '/users/login',
         failureFlash: true})
         (req, res, next);
 });
+
+//Logout Handler
+usersRouter.get('/logout', (req, res) =>{
+    req.logout();
+    req.flash('success_msg',"Logged out successful");
+    res.redirect('/users/login');
+})
 
 module.exports  = usersRouter;

@@ -32,10 +32,11 @@ body {
 
 .search [ type = text] {
     width: 90%;
-    margin-top: 70px ;
+    margin-top: 25px ;
     border: 2px solid black;
     box-sizing: border-box;
     border-radius: 5px;
+    display:inline-block;
 }
 
 

@@ -1,4 +1,3 @@
-  
 const mongoose = require('mongoose');
 // create find data schema 
 const UserSchema = new mongoose.Schema({

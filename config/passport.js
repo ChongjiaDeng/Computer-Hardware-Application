@@ -5,6 +5,22 @@ const bcrypt = require('bcryptjs');
 // The form to loading out user model
 const User = require('../src/models/User');
 
+/* router.post('/login', function (req, res) {
+  const {username, password} = req.body
+  // 根据username和password查询数据库users, 如果没有, 返回提示错误的信息, 如果有, 返回登陆成功信息(包含user)
+  UserModel.findOne({username, password:md5(password)}, filter, function (err, user) {
+    if(user) { // 登陆成功
+      // 生成一个cookie(userid: user._id), 并交给浏览器保存
+      res.cookie('userid', user._id, {maxAge: 1000*60*60*24})
+      // 返回登陆成功信息(包含user)
+      res.send({code: 0, data: user})
+    } else {// 登陆失败
+      res.send({code: 1, msg: '用户名或密码不正确!'})
+    }
+  })
+})
+*/
+
 module.exports = function (passport){
     passport.use(
         new LocalStrategy({ usernameField: 'username', passwordField: 'userPassword'}, (username, userPassword, done)=>{

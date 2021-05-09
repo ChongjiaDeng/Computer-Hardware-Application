@@ -22,15 +22,15 @@
 
         <div id="menu">
             <ul class="menu-item">
-               <a href="/article" style="float: left" title="News" >News</a>
-                <a href="/search" style="float: left" title="Hardware" >Hardware</a>
-                <a href="#" style="float: left" title="momnet" >Moment</a>
-                <a href="#" style="float: left" title="about" >About</a>
+                <a href="/article" style="float: left" title="News" >Technology News</a>
+                <a href="/search" style="float: left" title="Hardware" >Components Search</a>
+                <a href="/users/chat" style="float: left" title="momnet" >Chat Room</a>
+                <a href="https://platinum-loving-cardamom.glitch.me/about/home.html" style="float: left" title="about" >About Us</a>
              </ul>
         </div>
         <div class="search">
             <form action="/" method="post">
-            <input type= "text" name = "search" class= "form-control" placeholder="Please enter to search" required>
+            <input type= "text" name = "search" class= "form-control" placeholder="Please the keyword to search" required>
            <button type="submit" class="btn btn-primary"  value="search"> search</button>
         </form>
         </div> 
@@ -41,20 +41,28 @@
                 <div class="wrapper">
                     <div class="news">
                         <% if(articles != null) { %>
-                        <% articles.forEach(function(article, index) { %>
-                            <a href="<%- article.url %>" class="news__card">
+                            <% articles.forEach(function(article, index) { %>
+                            <div class="image">
                                 <img src="<%- article.urlToImage %>" alt="<%- article.title %>">
-                                <h2><%- article.title %></h2>
-                                <p><%- article.description %></p>
+                            </div>
+                            <div class="content">
+                                <h2 class="title"><%- article.title %></h2>
+                            </div>
+                            <div class=" description">
+                                    <p><%- article.description %></p>
+                                </div>
+                            <a href="<%- article.url %>" class="news__card" target="_black">
+                            -->read more
                                 <hr>
                             </a>
                         <% }) %>
+                    
                         <% } else { %>
                             No posts found.
                         <% } %>
                     </div>
                 </div>
-    </div>
+            </div>
 
         </main>
 

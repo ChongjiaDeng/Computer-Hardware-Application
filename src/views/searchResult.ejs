@@ -15,25 +15,27 @@
         <a href="/users/login" style="float: left; margin-left: 60px;" title="login">Login in</a>
       </div>
 	  
-	<main id= "top-title"> 
+	<div id= "top-title"> 
 		<div id= "main-title"> 
 		<h1>Computer Hardware App</h1>
 	</div>
 
 	<div id="menu">
 		<ul class="menu-item">
-		   <a href="/article" style="float: left" title="News" >News</a>
-			<a href="/search" style="float: left" title="Hardware" >Hardware</a>
-			<a href="#" style="float: left" title="momnet" >Moment</a>
-			<a href="#" style="float: left" title="about" >About</a>
+			<a href="/article" style="float: left" title="News" >Technology News</a>
+			<a href="/search" style="float: left" title="Hardware" >Components Search</a>
+			<a href="/users/chat" style="float: left" title="momnet" >Chat Room</a>
+			<a href="https://platinum-loving-cardamom.glitch.me/about/home.html" style="float: left" title="about" >About Us</a>
 		 </ul>
+	</div>
+	<div class="search">
+		<input type="text" id="search" class="form-control" placeholder="Search" value="<%= title %>">
+		<button class="btn btn-primary">search</button>
+	</div>
 	</div>
 
 	<div class="search-container">
-		<div class="search">
-			<input type="text" id="search" class="form-control" placeholder="Search" value="<%= title %>">
-			<button class="btn btn-primary">search</button>
-		</div>
+
 		<div class="goods">
 			<% if(data.length !== 0) { %>
 				<% for(let i = 0; i < data.length; i++) { %>

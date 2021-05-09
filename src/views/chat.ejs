@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatting Room</title>
+    <link rel = "stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/chatRoom.css">  
+
+  </head>
+  <body>
+    <div id="sign-up">
+      <a href="#" style="float: left; margin-left: 10px;"  title="sign"><%= username %></a>
+      <a href="/users/logout" style="float: left; margin-left: 60px;" title="login">Login Out</a>
+    </div>
+<div id= "top-title"> 
+  <div id= "main-title"> 
+  <h1>Computer Hardware App</h1>
+</div>
+
+<div id="menu">
+  <ul class="menu-item">
+    <a href="/article" style="float: left" title="News" >Technology News</a>
+    <a href="/search" style="float: left" title="Hardware" >Components Search</a>
+    <a href="/users/chat" style="float: left" title="momnet" >Chat Room</a>
+    <a href="https://platinum-loving-cardamom.glitch.me/about/home.html" style="float: left" title="about" >About Us</a>
+   </ul>
+</div>
+</div>
+
+<div id= "chat-room">
+  <div class="header">
+    <h1>Chatting Room</h1>
+  </div>
+<p class="lead mb-3">Hello! <%= username %></p>
+<form id="msgForm" action="">
+    <input id= "text" type="text"  name="msg" value="">
+    <button>Send</button>
+</form>
+<div id="messages">
+</div>
+</div>
+
+<script type="text/javascript">
+     var v=document.getElementById("text").value='<%= username %> : ';
+    
+</script>
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+crossorigin="anonymous"
+></script>
+<script src="/socket.io/socket.io.js"></script>
+<script defer src="/js/client.js"></script>
+  </body>
+</html>

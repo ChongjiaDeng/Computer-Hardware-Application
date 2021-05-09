@@ -1,0 +1,82 @@
+#sign-up{
+    width: 300px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2px;
+	border: 2px solid #8fdfd4
+}
+
+#top-title{
+    width: 900px;
+    height: 230px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+	border: 2px solid #545578; 
+} 
+.menu-item a{
+    background-color: #545578;
+    padding:10px 45px;
+    border-radius: 5px;
+}
+
+.head{
+	text-align: center
+}
+body {
+	background-color: #718041;
+	font-family: "SF Pro Display", 'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+	box-sizing: initial
+}
+
+
+form {
+	background: #a0a0a0;
+	padding: 3px;
+	bottom: 0;
+	width: 100%;
+}
+
+form input {
+	border: 0;
+	padding: 10px;
+	width: 90%;
+	margin-right: 0.5%;
+}
+
+form button {
+	width: 9%;
+	background: rgb(130, 224, 255);
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+}
+#chat-room{
+	background-color: white;
+	margin: 20px auto;
+	border-radius: 10px;
+	border: 2px solid #545578; 
+}
+.header{
+	text-align: center;
+}
+#messages {
+	
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#messages div {
+	padding: 5px 10px;
+}
+
+#messages div:nth-child(odd) {
+	background: #eee;
+}

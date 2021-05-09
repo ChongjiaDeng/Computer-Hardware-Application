@@ -36,6 +36,7 @@ newsRouter.get('', async(req, res) => {
 })
 
 
+ // articles search handler
 newsRouter.post('', async(req, res) => {
     //res.render('news') //test this page.
     let search = req.body.search

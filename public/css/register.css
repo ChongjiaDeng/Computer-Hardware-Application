@@ -1,6 +1,7 @@
 body {
-    background-color: #07ac84;
+    background-color: #718041;
     font-family: "SF Pro Display", 'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+    background-image: url("https://cdn.glitch.com/f0aea2a0-3dd7-4b8b-9748-32213cf78e2e%2Ff0aea2a0-3dd7-4b8b-9748-32213cf78e2e_pexels-tranmautritam-326501.jpg?v=1620531201679");
 }
 input{
     display: inline-block;

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport'); 
-
+const http = require('http');
 //connect-flash
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -13,7 +13,13 @@ const session = require('express-session');
 //This time we set a prot as 8080 on locally this computer or the Web hosting platform
 const app = express()
 const port = 8080 || process.env.PORT
-
+//scoketio
+const socketio = require('socket.io');
+const server = http.createServer(app);
+const io = socketio(server);
+const { Server } = require("socket.io");
+//const io = require('socket.io')(server);
+const Msg = require('./src/models/messages');
 //passport config
 require('./config/passport')(passport); //passport config
 
@@ -27,6 +33,24 @@ require('./config/passport')(passport); //passport config
    .connect(db,{ useNewUrlParser: true ,useUnifiedTopology: true})
    .then(() => console.log('MongoDB Connected'))
    .catch(err => console.log(err));
+
+  //connect to socket.io
+  io.on('connection', (socket) => {
+    Msg.find().then(result => {
+        socket.emit('output-messages', result)
+    })
+    console.log('a user connected');
+    socket.emit('message', 'A user joined');
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+    socket.on('chatmessage', msg => {
+        const message = new Msg({ msg });
+        message.save().then(() => {
+            io.emit('message', msg)
+        })
+    })
+});
 
 app.use(expressLayouts);
 app.use(express.static(__dirname + '/public'));
@@ -45,7 +69,7 @@ app.set('view engine' , 'ejs')
 
 //Bodayparser
 app.use(express.urlencoded({ extended: true}));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true})); 
 
 // express-session
 app.use(session({
@@ -78,6 +102,8 @@ app.use('/' , newsRouter) //from page will be basically just slash
 app.use('/article', newsRouter)
 app.use('/users', usersRouter)
 app.use('/search', searchRouter)
-// to the port 8080
-app.listen(port, () => console.log(`Starting server at ${port}`) );
 
+// to the port 8080
+//app.listen(port, () => console.log(`Starting server at ${port}`) );
+
+server.listen(port, () => console.log(`Server running on port ${port}`));

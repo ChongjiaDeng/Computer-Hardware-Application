@@ -4,16 +4,17 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 const User = require('../models/User');
-
+const{ ensureAuthenticated } = require('../../config/auth')
 
 // Login Handler
 usersRouter.get('/login' , (req, res) => res.render('login'))
 // Register Handler
 usersRouter.get('/register' , (req, res) => res.render('register'))
 // 
-/*usersRouter.get('/', (req, res) => res.render('', {
-    username: req.user.username
-}))*/
+usersRouter.get('/chat', ensureAuthenticated, (req, res) => 
+    res.render('chat', {
+      username: req.user.username
+}))
 
 // Regiser Handler
 usersRouter.post('/register', (req, res) =>{
@@ -72,11 +73,7 @@ if(errors.length > 0){
 //custom callback. If the built-in options are not sufficient for handling an authentication request
 usersRouter.post('/login', (req, res, next) =>{
     passport.authenticate('local', {
- /*       if(name =! null){
-            window.location.href = '/article/' + user.username;
-            successRedirect: window.location.href
-        }*/
-        successRedirect: '/article',
+        successRedirect: '/users/chat',
         failureRedirect: '/users/login',
         failureFlash: true})
         (req, res, next);

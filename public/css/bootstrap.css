@@ -69,6 +69,7 @@ body {
   color: #888;
   text-align: left;
   background-color: #fff;
+  background-image: url("https://cdn.glitch.com/f0aea2a0-3dd7-4b8b-9748-32213cf78e2e%2Fpexels-athena-2582937.jpg?v=1620531029779")
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
